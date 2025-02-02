@@ -4,12 +4,16 @@ import bcrypt
 import jwt
 from flask_jwt_extended import JWTManager, create_access_token
 from flask_cors import CORS, cross_origin
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app=Flask(__name__)
 jwt=JWTManager(app)
 CORS(app)
 
-app.config['MONGO_URI'] = 'mongodb+srv://kailash:2006@dhiyanesh.2u0vq.mongodb.net/E-sandhai?retryWrites=true&w=majority&appName=DHIYANESH'
+app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo=PyMongo(app)
 
