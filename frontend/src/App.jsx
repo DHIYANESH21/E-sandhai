@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Index from './componets/Index'
-import Signup from './componets/Signup'
-import Signin from './componets/Signin'
+import Index from './components/Index'
+import Signup from './components/Signup'
+import Signin from './components/Signin'
 
 const App = () => {
   return (
