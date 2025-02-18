@@ -19,6 +19,10 @@ const SignupForm = () => {
     }));
   };
 
+  const btnclick = ()=>{
+    Navigate
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -199,9 +203,7 @@ const SignupForm = () => {
           <div className="px-8 py-6 bg-gray-50 text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{' '}
-              <a href="/login" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                Sign in
-              </a>
+              <button className='text-green-500' onClick={btnclick}>Sign In</button>
             </p>
           </div>
         </div>
