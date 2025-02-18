@@ -58,7 +58,7 @@ def login_user(mongo):
             user = allusers.find_one({'email': request.json['email']})
 
             if not user :
-                return jsonify({"message":"email not found "}),400
+                return jsonify({"message":"Email not found "}),400
             
             if bcrypt.checkpw(request.json['pwd'].encode('utf-8'),user['pwd']):
                 access_token = create_access_token(identity=user['email'])
@@ -71,7 +71,7 @@ def login_user(mongo):
                     "token": str(access_token)
                 }), 200
             else:
-                return jsonify({"message":"Invalid password"}),401
+                return jsonify({"message":"Invalid Password"}),401
         
         except Exception as e:
             print(f"login error: {str(e)}")  # For debugging
